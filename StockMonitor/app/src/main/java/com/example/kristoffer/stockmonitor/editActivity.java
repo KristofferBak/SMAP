@@ -93,14 +93,17 @@ public class editActivity extends Activity implements AdapterView.OnItemSelected
     public void save(View view){
         if(et1.getText().length() < 1 ){
             et1.setError("Name is not valid");
+            return;
         }
 
         if(et2.getText().length() < 1 || hasOnlyNumbers(et2.getText().toString()) == false){
             et2.setError("Price is not valid");
+            return;
         }
 
         if(et3.getText().length() < 1|| hasOnlyNumbers(et3.getText().toString()) == false){
             et3.setError("Amount is not valid");
+            return;
         }
 
         else {
@@ -117,11 +120,15 @@ public class editActivity extends Activity implements AdapterView.OnItemSelected
             intent.putExtra("Amount", tempInt2);
 
             intent.putExtra("Sector", selectedItem);
-            //intent.putExtra("Sector", et4.getText().toString());
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
 
-            this.finish();}
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            if(intent.resolveActivity(getPackageManager()) != null){
+                startActivity(intent);
+            }
+
+            this.finish();
+        }
     }
 
     @Override

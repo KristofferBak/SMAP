@@ -38,13 +38,13 @@ public class DetailsActivity extends Activity {
     public void edit(View view){
         intent = new Intent(this, editActivity.class);
         setValues();
-        startActivity(intent);
+        if(intent.resolveActivity(getPackageManager()) != null){
+            startActivity(intent);
+        }
     }
 
     public void back(View view){
-      //  intent = new Intent( this, MainActivity.class);
-       // setValues();
-       // startActivity(intent);
+
         this.finish();
     }
 

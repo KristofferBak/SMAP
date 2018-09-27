@@ -6,10 +6,10 @@
     <string name="save">Save</string>
     <string name="overview">Overview</string>
     <string name="name">Name</string>
-    <string name="price">Price</string>
+    <string name="price">Price:</string>
     <string name="amount">Amount</string>
     <string name="sector">Sector</string>
-    <string name="stockname">Stock Name</string>
+    <string name="stockname">Stock Name:</string>
     <string name="Tech">Technology</string>
     <string name="Medical">Medical</string>
     <string name="BasicRes">Basic Resources</string>

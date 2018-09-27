@@ -14,6 +14,7 @@
         android:layout_marginBottom="93dp"
         android:onClick="back"
         android:text="@string/back"
+        style="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/AmountEditText"
         app:layout_constraintStart_toEndOf="@+id/textView8" />
@@ -28,7 +29,8 @@
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button4" />
+        app:layout_constraintTop_toTopOf="@+id/button4"
+        style="@style/AppTheme"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -109,7 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="@string/price"
         app:layout_constraintStart_toStartOf="@+id/NameEditText"
         app:layout_constraintTop_toBottomOf="@+id/NameEditText" />
@@ -120,7 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="@string/amount"
         app:layout_constraintStart_toStartOf="@+id/PriceEditText"
         app:layout_constraintTop_toBottomOf="@+id/PriceEditText" />

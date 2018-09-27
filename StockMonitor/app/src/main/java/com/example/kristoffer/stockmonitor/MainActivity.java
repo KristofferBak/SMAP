@@ -68,6 +68,10 @@ public class MainActivity extends Activity {
         intent.putExtra("Price", HCStock.getPrice());
         intent.putExtra("Name",HCStock.getName());
         intent.putExtra("Sector", HCStock.getSector());
-        startActivity(intent);
+
+        if(intent.resolveActivity(getPackageManager()) != null){
+            startActivity(intent);
+        }
+
     }
 }

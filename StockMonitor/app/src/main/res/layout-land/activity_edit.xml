@@ -16,6 +16,7 @@
         android:layout_marginTop="13dp"
         android:onClick="back"
         android:text="@string/back"
+        style="@style/AppTheme"
         app:layout_constraintStart_toStartOf="@+id/ScrollSpinner"
         app:layout_constraintTop_toBottomOf="@+id/ScrollSpinner" />
 
@@ -28,6 +29,7 @@
         android:layout_marginTop="13dp"
         android:onClick="save"
         android:text="@string/save"
+        style="@style/AppTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ScrollSpinner" />
 

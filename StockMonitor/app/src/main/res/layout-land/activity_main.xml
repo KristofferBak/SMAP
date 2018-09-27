@@ -11,9 +11,10 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="41dp"
+        android:layout_marginBottom="16dp"
         android:onClick="details"
         android:text="@string/details"
+        style="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageView" />
 
@@ -21,14 +22,17 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
 
+        android:layout_marginBottom="38dp"
+        android:layout_marginTop="36dp"
         android:adjustViewBounds="true"
         android:maxHeight="72dp"
         android:maxWidth="72dp"
         android:scaleType="fitCenter"
         android:src="@drawable/icon_blk_tech"
-        app:layout_constraintStart_toStartOf="@+id/PriceTextView"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/PriceTextView"
+        app:layout_constraintStart_toEndOf="@+id/PriceTextView"
         app:layout_constraintTop_toBottomOf="@+id/PriceTextView" />
 
     <TextView
@@ -44,22 +48,46 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="238dp"
-        android:layout_marginStart="238dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="44dp"
         android:text="@string/stockname"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="55dp"
-        android:layout_marginStart="55dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="16dp"
         android:text="@string/overview"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:text="@string/stockname"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="27dp"
+        android:text="@string/price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
 </android.support.constraint.ConstraintLayout>

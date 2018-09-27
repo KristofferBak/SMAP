@@ -17,6 +17,7 @@
         android:layout_marginStart="61dp"
         android:onClick="edit"
         android:text="@string/edit"
+        style="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/AmountTextView"
@@ -33,6 +34,7 @@
         android:layout_marginStart="65dp"
         android:onClick="back"
         android:text="@string/back"
+        style="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/PriceTextView"
         app:layout_constraintStart_toStartOf="parent" />
