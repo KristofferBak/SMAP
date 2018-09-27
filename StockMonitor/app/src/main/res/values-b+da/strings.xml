@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">StockMonitor</string>
+    <string name="details">Detaljer</string>
+    <string name="back">Tilbage</string>
+    <string name="edit">Redigér</string>
+    <string name="save">Gem</string>
+    <string name="overview">Overblik</string>
+    <string name="name">Navn</string>
+    <string name="price">Pris:</string>
+    <string name="amount">Antal</string>
+    <string name="sector">Sektor</string>
+    <string name="stockname">Aktienavn:</string>
+    <string name="Tech">Teknologi</string>
+    <string name="Medical">Medicin</string>
+    <string name="BasicRes">Basale Ressourser</string>
+    <string-array name="Sectors">
+        <item>Teknologi</item>
+        <item>Medicin</item>
+        <item>Basale Ressourcer</item>
+    </string-array>
+</resources>
