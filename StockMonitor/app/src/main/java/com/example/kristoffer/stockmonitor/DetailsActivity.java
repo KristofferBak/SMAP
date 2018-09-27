@@ -10,12 +10,15 @@ public class DetailsActivity extends Activity {
 
     Intent intent;
     Stock HCStock;
+    int index = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         intent = getIntent();
 
-        HCStock = new Stock(intent.getStringExtra("Name"), intent.getIntExtra("Price", 0), intent.getIntExtra("Amount",0), intent.getStringExtra("Sector"));
+        index = intent.getIntExtra("Sector",0);
+
+        HCStock = new Stock(intent.getStringExtra("Name"), intent.getIntExtra("Price", 0), intent.getIntExtra("Amount",0));
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
@@ -25,7 +28,22 @@ public class DetailsActivity extends Activity {
         TextView tv4 = findViewById(R.id.AmountTextView);
 
         tv1.setText(intent.getStringExtra("Name"));
-        tv2.setText(intent.getStringExtra("Sector"));
+
+        String tech = getString(R.string.Tech);
+        String med = getString(R.string.Medical);
+        String bas = getString(R.string.BasicRes);
+
+       if(index ==0){
+           tv2.setText(tech);
+       }
+
+       if(index == 1){tv2.setText(med);}
+
+       if(index == 2){
+           tv2.setText(bas);
+        }
+
+
         int temp = intent.getIntExtra("Price", 0);
         String tempString =  String.valueOf(temp);
         tv3.setText(tempString);
@@ -52,6 +70,6 @@ public class DetailsActivity extends Activity {
         intent.putExtra("Amount", HCStock.getAmount());
         intent.putExtra("Price", HCStock.getPrice());
         intent.putExtra("Name",HCStock.getName());
-        intent.putExtra("Sector", HCStock.getSector());
+        intent.putExtra("Sector", index);
     }
 }

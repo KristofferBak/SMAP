@@ -109,7 +109,7 @@
         android:id="@+id/PriceEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="number"
         android:text="@string/price"

@@ -11,7 +11,8 @@ public class MainActivity extends Activity {
 
     Intent intent;
     Intent intent2;
-    public Stock HCStock = new Stock("Tesla", 1000, 10, "Technology");
+    public Stock HCStock = new Stock("Tesla", 1000, 10);
+    int index = 0;
     ImageView iv;
     TextView tv;
     TextView pricetv;
@@ -33,8 +34,8 @@ public class MainActivity extends Activity {
             HCStock.setName(temp);
             HCStock.setPrice(intent2.getIntExtra("Price",0));
             HCStock.setAmount(intent2.getIntExtra("Amount", 0));
-            String tempSector = intent2.getStringExtra("Sector");
-            HCStock.setSector(tempSector);
+             index = intent2.getIntExtra("Sector",0);
+          // HCStock.setSector(tempSector);
 
             pricetv.setText(String.valueOf(HCStock.getPrice()));
         }
@@ -43,20 +44,19 @@ public class MainActivity extends Activity {
             pricetv.setText(String.valueOf(HCStock.getPrice()));
         }
 
-        switch(HCStock.getSector()){
-            case "Technology":
+        //String tech = getResources().getString(R.string.Tech);
+
+
+        switch(index){
+            case 0:
                 iv.setImageResource(R.drawable.icon_blk_tech);
                 break;
 
-            case "HealthCare":
+            case 1:
                 iv.setImageResource(R.drawable.healthcare_icon);
                 break;
 
-            case "BasicResources":
-                iv.setImageResource(R.drawable.soil_icon);
-                break;
-
-            case "":
+            case 2:
                 iv.setImageResource(R.drawable.soil_icon);
                 break;
         }
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
         intent.putExtra("Amount", HCStock.getAmount());
         intent.putExtra("Price", HCStock.getPrice());
         intent.putExtra("Name",HCStock.getName());
-        intent.putExtra("Sector", HCStock.getSector());
+        intent.putExtra("Sector", index);
 
         if(intent.resolveActivity(getPackageManager()) != null){
             startActivity(intent);

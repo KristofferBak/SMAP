@@ -17,38 +17,39 @@ public class editActivity extends Activity implements AdapterView.OnItemSelected
     EditText et2;
     EditText et3;
     Spinner sc;
-    String selectedItem = "Technology";
+    int index = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        intent = getIntent();
       //  HCStock  = new Stock(intent.getStringExtra("Name"), intent.getIntExtra("Price", 0), intent.getIntExtra("Amount",0), intent.getStringExtra("Sector"));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
-
+        intent = getIntent();
         et1 = findViewById(R.id.NameEditText);
         et2 = findViewById(R.id.PriceEditText);
         et3 = findViewById(R.id.AmountEditText);
         sc = findViewById(R.id.ScrollSpinner);
 
-        String sectorTemp = intent.getStringExtra("Sector");
+        index = intent.getIntExtra("Sector", 0);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Sectors, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sc.setAdapter(adapter);
         sc.setOnItemSelectedListener(this);
 
-        switch (sectorTemp){
-            case "Technology":
+       // index = sc.getSelectedItemPosition();
+
+        switch (index){
+            case 0:
                 sc.setSelection(0);
                 break;
 
-            case "HealthCare":
+            case 1:
                 sc.setSelection(1);
                 break;
 
-            case "BasicResources":
+            case 2:
                 sc.setSelection(2);
                 break;
         }
@@ -119,7 +120,7 @@ public class editActivity extends Activity implements AdapterView.OnItemSelected
             int tempInt2 = Integer.parseInt(temp2);
             intent.putExtra("Amount", tempInt2);
 
-            intent.putExtra("Sector", selectedItem);
+            intent.putExtra("Sector", index);
 
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -133,11 +134,11 @@ public class editActivity extends Activity implements AdapterView.OnItemSelected
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        selectedItem = parent.getSelectedItem().toString();
+        index = position;
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        intent.putExtra("Sector", selectedItem);
+        //intent.putExtra("Sector", selectedItem);
     }
 }

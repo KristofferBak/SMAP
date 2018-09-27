@@ -4,13 +4,13 @@ public class Stock {
     private String name;
     private int price;
     private int amount;
-    private String sector;
+   // private String sector;
 
-    public Stock(String name, int price, int amount, String sector){
+    public Stock(String name, int price, int amount){
         this.name = name;
         this.price = price;
         this.amount = amount;
-        this.sector = sector;
+        //this.sector = sector;
     }
 
     public int getAmount() {
@@ -21,9 +21,9 @@ public class Stock {
         return name;
     }
 
-    public String getSector() {
-        return sector;
-    }
+ //   public String getSector() {
+     //   return sector;
+  //  }
 
     public int getPrice() {
         return price;
@@ -41,7 +41,7 @@ public class Stock {
         this.price = price;
     }
 
-    public void setSector(String sector) {
-        this.sector = sector;
-    }
+  //  public void setSector(String sector) {
+    //    this.sector = sector;
+  //  }
 }
